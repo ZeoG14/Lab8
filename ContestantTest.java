@@ -14,7 +14,7 @@ public class ContestantTest
      */
     public void contestantGeorgeGetRegionTest() throws AssertException
     {
-    	// TODO: implement.
+    	 Assert.assertEquals(Region.NORTH, Contestant.GEORGE.getRegion());
     }
     
     /**
@@ -22,7 +22,7 @@ public class ContestantTest
      */
     public void contestantJillGetRegionTest() throws AssertException
     {
-    	// TODO: implement.
+    	Assert.assertEquals(Region.SOUTH, Contestant.JILL.getRegion());
     }
 
     /**
@@ -30,7 +30,7 @@ public class ContestantTest
      */
     public void contestantMatthewGetRegionTest() throws AssertException
     {
-    	// TODO: implement.
+    	Assert.assertEquals(Region.EAST, Contestant.MATTHEW.getRegion());
     }
 
     /**
@@ -38,7 +38,7 @@ public class ContestantTest
      */
     public void contestantBettyGetRegionTest() throws AssertException
     {
-    	// TODO: implement.
+    	Assert.assertEquals(Region.WEST, Contestant.BETTY.getRegion());
     }
 
     /**
@@ -46,7 +46,7 @@ public class ContestantTest
      */
     public void contestantGeorgeGetChoiceTest() throws AssertException
     {
-    	// TODO: implement.
+    	Assert.assertEquals(HandChoice.ROCK, Contestant.GEORGE.getChoice());
     }
     
     /**
@@ -55,7 +55,7 @@ public class ContestantTest
 
     public void contestantJillGetChoiceTest() throws AssertException
     { 
-    	// TODO: implement.
+    	Assert.assertEquals(HandChoice.ROCK, Contestant.JILL.getChoice());
     }
 
     /**
@@ -63,7 +63,7 @@ public class ContestantTest
      */
     public void contestantMatthewGetChoiceTest() throws AssertException
     {
-    	// TODO: implement.
+    	Assert.assertEquals(HandChoice.SCISSORS, Contestant.MATTHEW.getChoice());
     }
 
     /**
@@ -71,7 +71,7 @@ public class ContestantTest
      */
     public void contestantBettyGetChoiceTest() throws AssertException
     {
-    	// TODO: implement.
+    	Assert.assertEquals(HandChoice.PAPER, Contestant.BETTY.getChoice());
     }
 
     /**
@@ -79,6 +79,9 @@ public class ContestantTest
      */
     public void contestantToStringTest() throws AssertException
     {
-    	// TODO: implement.
+    	Assert.assertEquals("george: contestant from north throwing rock", Contestant.GEORGE.toString());
+    	Assert.assertEquals("jill: contestant from south throwing rock", Contestant.JILL.toString());
+    	Assert.assertEquals("matthew: contestant from east throwing scissors", Contestant.MATTHEW.toString());
+    	Assert.assertEquals("betty: contestant from west throwing paper", Contestant.BETTY.toString());
     }
 }
