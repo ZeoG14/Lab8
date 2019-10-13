@@ -28,7 +28,8 @@ public class ContestantInfo
      */
     public ContestantInfo(Region region, HandChoice choice)
     {
-    	/* TODO: finish this */
+    	this.region = region;
+    	this.choice = choice;
     }
 
     /**
@@ -38,7 +39,7 @@ public class ContestantInfo
      */
     public Region getRegion()
     {
-    	/* TODO: finish this */
+    	return region;
     }
 
     /**
@@ -48,7 +49,7 @@ public class ContestantInfo
      */
     public HandChoice getChoice()
     {
-    	/* TODO: finish this */
+    	return choice;
     }
 
     /**
@@ -57,6 +58,6 @@ public class ContestantInfo
     @Override
     public String toString()
     {
-    	/* TODO: finish this */
+    	return String.format("contestant from %s throwing %s", region, choice);
     }
 }
