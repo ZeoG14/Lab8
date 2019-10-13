@@ -18,6 +18,5 @@ public class RegionTest
     	Assert.assertEquals("east", Region.EAST.toString());
     	Assert.assertEquals("south", Region.SOUTH.toString());
     	Assert.assertEquals("west", Region.WEST.toString());
-    	
     }
 }
