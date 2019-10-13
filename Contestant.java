@@ -14,22 +14,22 @@ public enum Contestant
     /**
      * The Contestant "George".
      */
-    GEORGE(/* TODO: finish this */),
+    GEORGE(new ContestantInfo(Region.NORTH, HandChoice.ROCK)),
     
     /**
      * The Contestant "Jill".
      */
-    JILL(/* TODO: finish this */),
+    JILL(new ContestantInfo(Region.SOUTH, HandChoice.ROCK)),
 
     /**
      * The Contestant "Matthew".
      */
-    MATTHEW(/* TODO: finish this */),
+    MATTHEW(new ContestantInfo(Region.EAST, HandChoice.SCISSORS)),
 
     /**
      * The Contestant "Betty".
      */
-    BETTY(/* TODO: finish this */);
+    BETTY(new ContestantInfo(Region.WEST, HandChoice.PAPER));
 
     /**
      * ContestantInfo that holds information about this Contestant.
@@ -49,7 +49,7 @@ public enum Contestant
      */
     private Contestant(ContestantInfo info)
     {
-        // TODO: implement.
+        this.info = info;
     }
 
     /**
@@ -57,7 +57,7 @@ public enum Contestant
      */
     public Region getRegion()
     {
-        // TODO: implement this.
+        return info.getRegion();
     }
 
     /**
@@ -65,7 +65,7 @@ public enum Contestant
      */
     public HandChoice getChoice()
     {
-        // TODO: implement this.
+        return info.getChoice();
     }
 
     /** 
