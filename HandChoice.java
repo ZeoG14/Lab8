@@ -38,7 +38,12 @@ public enum HandChoice
     /* This is the static initializer, run when the class is first loaded. */
     static
     {
-        // TODO: implement this. You should initialize and populate (load entries into) the CHOICE_MAP.
+    	CHOICE_MAP = new HashMap<HandChoice, HandChoice>();
+    	
+    	// Populating the map with the Hand Choices that win against eachother
+    	CHOICE_MAP.put(ROCK, SCISSORS);
+    	CHOICE_MAP.put(SCISSORS, PAPER);
+    	CHOICE_MAP.put(PAPER, ROCK);
     }
 
     /**
@@ -49,17 +54,18 @@ public enum HandChoice
      */
     public HandChoice winsAgainst()
     {
-        // TODO: implement this.
+        return CHOICE_MAP.get(this);
     }
 
     /**
      * Returns the enum's name in lowercase.
      * 
      * @return The name of the enum as a lowercase string.
-     */
+     *
     @Override
+    */
     public String toString()
     {
-        // TODO: implement this.
+    	return name().toLowerCase();
     }
 }
