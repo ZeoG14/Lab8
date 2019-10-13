@@ -14,21 +14,25 @@ public enum Region
      */
     NORTH,
     
+    
     /**
      * The Contestant is from the East region.
      */
     EAST,
+    
     
     /**
      * The Contestant is from the South region.
      */
     SOUTH,
     
+    
     /**
      * The Contestant is from the West region.
      */
     WEST;
     
+	
     /**
      * Returns the region's name in lowercase.
      * 
