@@ -1,3 +1,5 @@
+import java.util.LinkedHashMap;
+
 /**
  * Lab 
  *
@@ -19,28 +21,36 @@ public class RPSArenaTest {
      */
     public static void initialize() throws AssertException
     {
-    	// TODO: implement.
+    	 arena = new RPSArena();
     }
+
     
     /**
      * Tests the constructor and the contestant lists
      */
     public void testContestantList() throws AssertException {
-    	// TODO: implement.
+    	Assert.assertEquals(Contestant.GEORGE, arena.getContestant("GEO"));
+    	Assert.assertEquals(Contestant.JILL, arena.getContestant("JIL"));
+    	Assert.assertEquals(Contestant.MATTHEW, arena.getContestant("MAT"));
+    	Assert.assertEquals(Contestant.BETTY, arena.getContestant("BET"));
+    	
     }
 
     /**
      * Tests getting the abbreviations.
      */
     public void testContestantAbbreviations() throws AssertException {
-    	// TODO: implement.
+    	Assert.assertEquals("[GEO, JIL, MAT, BET]", arena.getContestantAbbreivations().toString());
     }
     
     /**
      * Tests getting the contestants that exist in the map.
      */
     public void testGetContestantExists() throws AssertException {
-    	// TODO: implement.
+    	Assert.assertEquals(Contestant.GEORGE, arena.getContestant("GEO"));
+    	Assert.assertEquals(Contestant.JILL, arena.getContestant("JIL"));
+    	Assert.assertEquals(Contestant.MATTHEW, arena.getContestant("MAT"));
+    	Assert.assertEquals(Contestant.BETTY, arena.getContestant("BET"));
     }
     
     /**
@@ -48,7 +58,7 @@ public class RPSArenaTest {
      * Note: there is an assertNull method within Assert.java you can use
      */
     public void testGetContestantDoesNotExist() throws AssertException {
-    	// TODO: implement.
+    	Assert.assertNull(arena.getContestant("JAC"));
     }
     
     /**
@@ -56,20 +66,20 @@ public class RPSArenaTest {
      * Note: there is an assertNull method within Assert.java you can use
      */
     public void testContestantBattleTie() throws AssertException {
-    	// TODO: implement.
+    	Assert.assertNull(RPSArena.battleContestants(Contestant.GEORGE, Contestant.JILL));
     }
     
     /**
      * Tests a contestant battle ending in George winning.
      */
     public void testContestantBattleGeorgeWins() throws AssertException {
-    	// TODO: implement.
+    	Assert.assertEquals(Contestant.GEORGE, RPSArena.battleContestants(Contestant.GEORGE, Contestant.MATTHEW));
     }
     
     /**
      * Tests a contestant battle ending in Betty winning.
      */
     public void testContestantBattleBettyWins() throws AssertException {
-    	// TODO: implement.
+    	Assert.assertEquals(Contestant.BETTY, RPSArena.battleContestants(Contestant.BETTY, Contestant.GEORGE));
     }
 }
