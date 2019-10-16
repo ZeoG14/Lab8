@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -36,8 +37,13 @@ public class RPSArena
     {
         // TODO: implement this.
         // Initialize the CONTESTANT_MAP
-        
+        CONTESTANT_MAP = new LinkedHashMap<String, Contestant>();
         // Populate the CONTESTANT_MAP
+        CONTESTANT_MAP.put("GEO", Contestant.GEORGE);
+        CONTESTANT_MAP.put("JIL", Contestant.JILL);
+        CONTESTANT_MAP.put("MAT", Contestant.MATTHEW);
+        CONTESTANT_MAP.put("BET", Contestant.BETTY);
+        
     }
     
     /**
@@ -49,7 +55,7 @@ public class RPSArena
      */
     public Contestant getContestant(String key)
     {
-        // TODO: implement this.
+        return CONTESTANT_MAP.get(key);
     }
     
     /**
@@ -62,7 +68,7 @@ public class RPSArena
      */
     public Set<String> getContestantAbbreivations()
     {
-        // TODO: implement this.
+        return CONTESTANT_MAP.keySet();
     }
     
     /**
@@ -81,7 +87,20 @@ public class RPSArena
     {
         String ret = "";
 
-        // TODO: implement this
+        for(Entry<String, Contestant> entry  : CONTESTANT_MAP.entrySet())
+        {
+        	Contestant player = entry.getValue();
+        	
+        	if(player.getChoice().equals(choice))
+        	{
+        		ret += String.format("%s - %s\n", entry.getKey(), player.toString()); 
+       
+        	}
+        	//else
+        	//{
+        	//	return null;
+        	//}
+        }
         
         return ret;
     }
@@ -103,11 +122,22 @@ public class RPSArena
         // TODO: implement this.
         
         // Get the Contestant choices:
-        
+    	HandChoice choiceOfContestantA = contestantA.getChoice();
+    	HandChoice choiceOfContestantB = contestantB.getChoice();
         // Check to see if ContestantA's choice type wins against ContestantB's:
-        
+    	if(choiceOfContestantA.winsAgainst().equals(choiceOfContestantB))
+    	{
+    		return contestantA;
+    	}
         // Check to see if ContestantB's choice type wins against ContestantA's:
-        
+    	if(choiceOfContestantB.winsAgainst().equals(choiceOfContestantA))
+    	{
+    		return contestantB;
+    	}
         //Tie otherwise (includes choices that are the same):
+    	else
+    	{
+    		return null;
+    	}
     }
 }
